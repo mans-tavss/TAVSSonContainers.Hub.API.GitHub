@@ -12,6 +12,7 @@ namespace Hub.API.Installers
         public void InstallServices(IServiceCollection services, IConfiguration configuration)
         {
             services.AddSignalRCore();
+            services.AddSignalR();
         }
     }
 }
