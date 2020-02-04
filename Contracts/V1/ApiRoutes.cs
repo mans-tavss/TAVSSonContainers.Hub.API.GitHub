@@ -26,6 +26,13 @@ namespace Hub.API.Contracts.V1
             public const string NotiBase = Base + "Noti/";
         }
 
+        public static class Chart
+        {
+            public const string ChartBase = Base + "Chart/";
+            public const string GetChart = ChartBase;
+
+        }
+
 
     }
 }
