@@ -1,6 +1,7 @@
 ﻿using Hub.API.Data;
 using Hub.API.Hubs;
 using Hub.API.TimerFeatures;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.SignalR;
 using System;
 using System.Collections.Generic;
@@ -16,6 +17,7 @@ namespace Hub.API.Services
         {
             _hub = hub;
         }
+        
         public void GetChart()
         {
             var Timer = new TimerManager(()

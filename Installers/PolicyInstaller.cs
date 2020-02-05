@@ -12,11 +12,13 @@ namespace Hub.API.Installers
         public void InstallServices(IServiceCollection services, IConfiguration configuration)
         {
 
-            services.AddCors(Options =>
+            services.AddCors(options =>
             {
-                Options.AddPolicy("EnableCORS", builder =>
-                 builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod().Build());
-
+                options.AddPolicy("CorsPolicy", builder => builder
+                .WithOrigins("http://localhost:4200")
+                .AllowAnyMethod()
+                .AllowAnyHeader()
+                .AllowCredentials());
             });
         }
     }

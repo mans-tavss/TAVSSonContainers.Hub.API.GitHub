@@ -1,4 +1,5 @@
 ﻿using Hub.API.Options;
+using Hub.API.Services;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
@@ -24,6 +25,8 @@ namespace Hub.API.Installers
 
             services.AddSingleton<IChannelsDatabaseSettings>(sp =>
                                 sp.GetRequiredService<IOptions<ChannelsDatabaseSettings>>().Value);
+
+            services.AddSingleton<IChartsServices, ChartsServices>();
         }
     }
 }
