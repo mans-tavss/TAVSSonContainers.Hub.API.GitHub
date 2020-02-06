@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Hub.API.Services
 {
-    public class NotificationsService
+    public class NotificationsService : INotificationsService
     {
     }
 }

@@ -16,6 +16,8 @@ namespace Hub.API.Installers
         {
             services.Configure<ChannelsDatabaseSettings>(
                 configuration.GetSection(nameof(ChannelsDatabaseSettings)));
+            services.Configure<UsersDatabaseSettings>(
+                configuration.GetSection(nameof(UsersDatabaseSettings)));
 
             services.Configure<NotificationsDatabaseSettings>(
                 configuration.GetSection(nameof(NotificationsDatabaseSettings)));
@@ -26,7 +28,12 @@ namespace Hub.API.Installers
             services.AddSingleton<IChannelsDatabaseSettings>(sp =>
                                 sp.GetRequiredService<IOptions<ChannelsDatabaseSettings>>().Value);
 
+            services.AddSingleton<IUsersDatabaseSettings>(sp =>
+                    sp.GetRequiredService<IOptions<UsersDatabaseSettings>>().Value);
+
             services.AddSingleton<IChartsServices, ChartsServices>();
+            services.AddSingleton<IChannelsService, ChannelsService>();
+            services.AddSingleton<INotificationsService, NotificationsService>();
         }
     }
 }
