@@ -12,6 +12,7 @@ namespace Hub.API.Installers
     {
         public void InstallServices(IServiceCollection services, IConfiguration configuration)
         {
+
             services.AddControllersWithViews();
             services.AddSwaggerGen(x =>
                             x.SwaggerDoc("v1", new OpenApiInfo { Title = "Hub Api", Version = "v1" })

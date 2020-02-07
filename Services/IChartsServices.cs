@@ -5,7 +5,8 @@ using System.Threading.Tasks;
 
 namespace Hub.API.Services
 {
-    public class NotificationsService : INotificationsService
+    public interface IChartsServices
     {
+        void GetChart();
     }
 }

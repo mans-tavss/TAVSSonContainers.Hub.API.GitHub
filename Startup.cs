@@ -54,13 +54,15 @@ namespace Hub.API
             app.UseDefaultFiles();
             app.UseStaticFiles();
             app.UseRouting();
-            app.UseCors("EnableCORS");
+            app.UseCors("CorsPolicy");
+            
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllers().RequireCors("EnableCORS");
+                endpoints.MapControllers();
                 endpoints.MapHub<ChatHub>("/ChatHub");
                 endpoints.MapHub<NotificationHub>("/NotificationHub");
                 endpoints.MapHub<ChartsHub>("/Charts");
+                
             });
 
            
